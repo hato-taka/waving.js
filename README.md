@@ -12,4 +12,4 @@ Add waving to your webpage and call `wave({})`:
 ```
 
 ### Gif demo:
-![Waving animated](https://tipsy.github.io/waving.js/wavingJs.gif)
+![Waving animated](https://github.com/hato-taka/waving.js/blob/main/wavingJs.gif)
