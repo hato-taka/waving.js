@@ -7,6 +7,6 @@ Add waving to your webpage and call `waving({})`:
 <body>
   ...
   <script src="https://hashimoto-naoki.com/wp-content/themes/MyPortfolio/js/waving.js"></script>
-  <script>wave({});</script>
+  <script> new Wave({});</script>
 </body>
 ```
