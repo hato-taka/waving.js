@@ -2,7 +2,7 @@
 A lightweight JavaScript library for creating waves
 
 # Usage
-Add waving to your webpage and call `waving({})`: 
+Add waving to your webpage and call `wave({})`: 
 ```html
 <body>
   ...
