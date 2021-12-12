@@ -10,3 +10,6 @@ Add waving to your webpage and call `wave({})`:
   <script> new Wave({});</script>
 </body>
 ```
+
+### Gif demo:
+![Waving animated](https://tipsy.github.io/waving.js/wavingJs.gif)
