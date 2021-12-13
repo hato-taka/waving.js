@@ -1,6 +1,3 @@
-'use strict';
-
-(() => {
 
   class Wave {
     constructor(config) {
@@ -18,6 +15,8 @@
       this.lineWidth = config.lineWidth || 1 ; //線の幅
       this.xAxis = config.xAxis || Math.floor (this.canvas.height / 2); //X軸
       this.yAxis = config.yAxis || 0; //Y軸
+      this.stroke = config.stroke || true; //波線のみ
+      this.fill = config.fill || false; //塗りつぶし
 
       this.canvas.width = config.canvasWidth || document.documentElement.clientWidth; // Canvasのwidthをウィンドウの幅に合わせる
       this.canvas.height = config.canvasHeight || 200; //底辺からの波の高さ
@@ -54,12 +53,22 @@
 
     drawWave (canvas, color, alpha, zoom, delay) {
       var context = canvas.contextCache;
-      context.strokeStyle = color; //線の色
-      context.lineWidth = this.lineWidth; //線の幅
       context.globalAlpha = alpha;
       context.beginPath(); //パスの開始
       this.drawSine (canvas, this.info.time / 0.5, zoom, delay);
-      context.stroke(); //線
+      
+      if(this.stroke){
+        context.strokeStyle = color; //線の色
+        context.lineWidth = this.lineWidth; //線の幅
+        context.stroke(); //線
+      }
+      if(this.fill){
+        context.lineTo(canvas.width + 10, canvas.height); //パスをCanvasの右下へ
+        context.lineTo(0, canvas.height); //パスをCanvasの左下へ
+        context.closePath() //パスを閉じる
+        context.fillStyle = color;//塗りの色
+        context.fill(); //塗りつぶす
+      }
     }
 
     drawSine (canvas, t, zoom, delay) {
@@ -80,5 +89,3 @@
       }
     }
   }
-
-})();
