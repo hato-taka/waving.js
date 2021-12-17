@@ -14,7 +14,7 @@
       this.startPosition = config.startPosition || [0, 0, 0, 100, 0]; //波の開始位置の遅れ
       this.lineWidth = config.lineWidth || 1 ; //線の幅
       this.xAxis = config.xAxis || Math.floor (this.canvas.height / 2); //X軸
-      this.yAxis = config.yAxis || 0; //Y軸
+      this.yAxis = config.yAxis || -1; //Y軸
       this.stroke = config.stroke || true; //波線のみ
       this.fill = config.fill || false; //塗りつぶし
 
